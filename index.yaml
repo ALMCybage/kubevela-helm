@@ -3,12 +3,12 @@ entries:
   my-bulky-app:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2025-12-15T08:29:33.604393724Z"
+    created: "2025-12-15T08:54:50.048732278Z"
     description: A Helm chart for Kubernetes
-    digest: e18f375f8ac62a36bff2a567dcc80576f57f6096a6b990078145902669ca6e2a
+    digest: ba72074a2f4210a92c21c192b94e482aaab098c38d973b95be68a65e757d2802
     name: my-bulky-app
     type: application
     urls:
     - https://ALMCybage.github.io/kubevela-helm/my-bulky-app-0.1.0.tgz
     version: 0.1.0
-generated: "2025-12-15T08:29:33.604009662Z"
+generated: "2025-12-15T08:54:50.048474594Z"
