@@ -1,18 +1,18 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Release.Name }}-deployment
+  name: nginx-deployment
   labels:
-    app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+    app: nginx-deployment
 spec:
   replicas: {{ .Values.replicaCount }} # Configured via values.yaml
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+      app: nginx-deployment
   template:
     metadata:
       labels:
-        app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+        app: nginx-deployment
     spec:
       containers:
         - name: {{ .Chart.Name }}
