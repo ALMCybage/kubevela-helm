@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Release.Name }}-deployment
+  labels:
+    app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }} # Configured via values.yaml
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: {{ include "my-bulky-app.name" . }}
+    spec:
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image }}:{{ .Values.tag }}" # Configured via values.yaml
+          env:
+            - name: ENV
+              value: {{ .Values.environment }} # Configured via values.yaml
